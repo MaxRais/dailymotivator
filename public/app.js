@@ -3,5 +3,5 @@
  */
 
 (function() {
-    angular.module("DM", ["ngRoute"]);
+    angular.module("DM", ["ngRoute", "webNotifications"]);
 })();

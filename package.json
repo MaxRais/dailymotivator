@@ -4,6 +4,7 @@
   "description": "DailyMotivator",
   "main": "server.js",
   "dependencies": {
+    "angular-web-notification": "0.0.84",
     "async": "^2.0.0-rc.6",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.1",

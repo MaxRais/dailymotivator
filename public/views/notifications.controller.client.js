@@ -24,7 +24,6 @@
             .getNotifications(uid)
             .then(
                 function (response) {
-                    console.log(response)
                     vm.notifications = response.data;
                 },
                 function (error) {
