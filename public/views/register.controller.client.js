@@ -1,7 +1,3 @@
-/**
- * Created by MaxRais on 5/26/16.
- */
-
 (function () {
     angular
         .module("DM")
