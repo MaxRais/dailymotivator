@@ -33,6 +33,11 @@
                 templateUrl: "views/profile.view.client.html",
                 controller: "ProfileController",
                 controllerAs: "model"
+            })
+            .when("/user/:uid/motivators", {
+                templateUrl: "views/motivators.view.client.html",
+                controller: "MotivatorsController",
+                controllerAs: "model"
             });
     }
 })();

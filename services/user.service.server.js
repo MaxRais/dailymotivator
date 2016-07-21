@@ -9,20 +9,15 @@ module.exports = function(app, models) {
 
     app.post("/api/user", createUser);
     app.get("/api/user", getUsers);
-    app.get("/api/user/brackets/:bracketId", getUsers);
     app.get("/api/user/:userId", findUserById);
     app.put("/api/user/:userId", updateUser);
-    app.put("/api/user/:userId/brackets/:bracketId", addBracket);
-    app.put("/api/user/:userId/participating", addParticipating);
-    app.put("/api/user/:userId/participating", addParticipating);
-    app.put("/api/user/:uid/follow/:tid", followUser);
     app.delete("/api/user/:userId", deleteUser);
     app.get("/api/user", findUserByCredentials);
     app.post('/api/login', passport.authenticate('wam'), login);
     app.post('/api/logout', logout);
     app.post('/api/register', register);
     app.get('/api/loggedin', loggedin);
-    app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
+    app.get('/api/user/:userId/motivators', getMotivators);
 
     passport.use('wam', new LocalStrategy(localStrategy));
     passport.serializeUser(serializeUser);
@@ -253,48 +248,15 @@ module.exports = function(app, models) {
             );
     }
 
-    function addBracket(req, res) {
-        var uid = req.params["userId"];
-        var bid = req.params["bracketId"];
+    function getMotivators(req, res) {
+        var id = req.params.userId;
 
         userModel
-            .findUserById(uid)
-            .then(function(user) {
-                user.brackets.push(bid);
-                return userModel.updateUser(uid, user);
-            })
-            .then(function(user) {
-                res.json(user);
-            })
-    }
-
-    function addParticipating(req, res) {
-        var uid = req.params["userId"];
-        var participating = req.body;
-
-        userModel
-            .findUserById(uid)
-            .then(function(user) {
-                user.participating.push(participating);
-                return userModel.updateUser(uid, user);
-            })
-            .then(function(user) {
-                res.json(user);
-            })
-    }
-
-    function followUser(req, res) {
-        var uid = req.params["uid"];
-        var tid = req.params["tid"];
-
-        userModel
-            .findUserById(uid)
-            .then(function(user) {
-                user.following.push(tid);
-                return userModel.updateUser(uid, user);
-            })
-            .then(function(user) {
-                res.json(user);
-            })
+            .findUserById(id)
+            .then(
+                function(user) {
+                    res.send(user.motivators);
+                }
+            )
     }
 };

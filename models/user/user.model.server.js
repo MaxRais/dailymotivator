@@ -38,8 +38,13 @@ module.exports = function() {
 
     function updateUser(id, newUser) {
 
-        return User.findOneAndUpdate(id, newUser);
-
+        return User.findOneAndUpdate(id,
+            {
+                $set: {
+                    motivators: newUser.motivators,
+                    notifications: newUser.notifications
+                }
+            });
     }
 
     function deleteUser(id) {

@@ -19,10 +19,7 @@
             deleteUser: deleteUser,
             login: login,
             logout: logout,
-            addBracket: addBracket,
-            addParticipating: addParticipating,
-            followUser: followUser,
-            findParticipants: findParticipants
+            getMotivators: getMotivators
         };
         return api;
 
@@ -82,27 +79,8 @@
             return $http.post(url, user);
         }
 
-        function addBracket(uid, bid) {
-            var url = "/api/user/"+uid+"/brackets/"+bid;
-            return $http.put(url);
-        }
-
-        function addParticipating(uid, bid, pid) {
-            var url = "/api/user/"+uid+"/participating";
-            var part = {
-                bracketId: bid,
-                participantId: pid
-            };
-            return $http.put(url, part);
-        }
-
-        function followUser(yourId, theirId) {
-            var url = "/api/user/"+yourId+"/follow/"+theirId;
-            return $http.put(url);
-        }
-
-        function findParticipants(id) {
-            var url = "/api/user/brackets/"+id;
+        function getMotivators(id) {
+            var url = "/api/user/" + id + "/motivators";
             return $http.get(url);
         }
     }

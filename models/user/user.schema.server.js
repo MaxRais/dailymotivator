@@ -8,8 +8,8 @@ module.exports = function() {
     var UserSchema  = mongoose.Schema({
         username: String,
         password: String,
-        quotes: [String],
-        reminders: [{
+        motivators: [String],
+        notifications: [{
             hour: Number,
             minute: Number
         }]

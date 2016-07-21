@@ -1,0 +1,54 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand">
+                Motivators
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div ng-if="model.error" class="alert alert-danger">
+        {{model.error}}
+    </div>
+    <p class="navbar-text pull-right">
+        <span ng-click="model.addMotivator(quote)" class="glyphicon glyphicon-plus"></span>
+    </p>
+    <form>
+        <textarea rows="3"
+                  ng-model="quote"
+                  name="quote"
+                  class="form-control"
+                  placeholder="Motivate me!"
+                  type="text">
+        </textarea>
+    </form>
+    </a>
+    <ul class="list-group">
+        <li ng-repeat="motivator in model.motivators" class="list-group-item">
+            {{motivator}}
+            <span ng-click="model.deleteMotivator(motivator)"
+                  class="glyphicon glyphicon-minus pull-right">
+            </span>
+        </li>
+    </ul>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <div class="row navbar-text">
+            <div class="col-xs-3 text-center">
+            </div>
+            <div class="col-xs-3 text-center">
+            </div>
+            <div class="col-xs-3 text-center">
+            </div>
+            <div class="col-xs-3 text-center">
+                <a href="#/user/{{model.uid}}">
+                    <span class="glyphicon glyphicon-user"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
