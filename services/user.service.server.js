@@ -18,6 +18,7 @@ module.exports = function(app, models) {
     app.post('/api/register', register);
     app.get('/api/loggedin', loggedin);
     app.get('/api/user/:userId/motivators', getMotivators);
+    app.get('/api/user/:userId/notifications', getNotifications);
 
     passport.use('wam', new LocalStrategy(localStrategy));
     passport.serializeUser(serializeUser);
@@ -256,6 +257,18 @@ module.exports = function(app, models) {
             .then(
                 function(user) {
                     res.send(user.motivators);
+                }
+            )
+    }
+
+    function getNotifications(req, res) {
+        var id = req.params.userId;
+
+        userModel
+            .findUserById(id)
+            .then(
+                function(user) {
+                    res.send(user.notifications);
                 }
             )
     }

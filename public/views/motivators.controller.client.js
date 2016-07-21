@@ -21,7 +21,6 @@
             .getMotivators(uid)
             .then(
                 function (response) {
-                    console.log(response);
                     vm.motivators = response.data;
                 },
                 function (error) {
@@ -44,7 +43,6 @@
         }
 
         function deleteMotivator(motivator) {
-            console.log("delete: " + motivator);
             var index = vm.motivators.indexOf(motivator);
             vm.motivators.splice(index, 1);
             vm.user.motivators = vm.motivators;

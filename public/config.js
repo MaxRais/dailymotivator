@@ -38,6 +38,11 @@
                 templateUrl: "views/motivators.view.client.html",
                 controller: "MotivatorsController",
                 controllerAs: "model"
+            })
+            .when("/user/:uid/notifications", {
+                templateUrl: "views/notifications.view.client.html",
+                controller: "NotificationsController",
+                controllerAs: "model"
             });
     }
 })();

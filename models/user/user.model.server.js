@@ -37,7 +37,6 @@ module.exports = function() {
     }
 
     function updateUser(id, newUser) {
-
         return User.findOneAndUpdate(id,
             {
                 $set: {

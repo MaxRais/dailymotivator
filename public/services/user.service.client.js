@@ -19,7 +19,8 @@
             deleteUser: deleteUser,
             login: login,
             logout: logout,
-            getMotivators: getMotivators
+            getMotivators: getMotivators,
+            getNotifications: getNotifications
         };
         return api;
 
@@ -81,6 +82,11 @@
 
         function getMotivators(id) {
             var url = "/api/user/" + id + "/motivators";
+            return $http.get(url);
+        }
+
+        function getNotifications(id) {
+            var url = "/api/user/" + id + "/notifications";
             return $http.get(url);
         }
     }

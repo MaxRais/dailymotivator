@@ -11,7 +11,8 @@ module.exports = function() {
         motivators: [String],
         notifications: [{
             hour: Number,
-            minute: Number
+            minute: Number,
+            hmt: String
         }]
     }, {collection: "dmUser"});
 

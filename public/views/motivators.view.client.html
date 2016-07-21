@@ -15,7 +15,7 @@
     <p class="navbar-text pull-right">
         <span ng-click="model.addMotivator(quote)" class="glyphicon glyphicon-plus"></span>
     </p>
-    <form>
+    <div>
         <textarea rows="3"
                   ng-model="quote"
                   name="quote"
@@ -23,10 +23,10 @@
                   placeholder="Motivate me!"
                   type="text">
         </textarea>
-    </form>
+    </div>
     </a>
     <ul class="list-group">
-        <li ng-repeat="motivator in model.motivators" class="list-group-item">
+        <li ng-repeat="motivator in model.motivators" class="list-group-item" style="margin-top: 10px">
             {{motivator}}
             <span ng-click="model.deleteMotivator(motivator)"
                   class="glyphicon glyphicon-minus pull-right">
