@@ -1,0 +1,27 @@
+<div>
+    <div class="container">
+        <div ng-if="model.error" class="alert alert-danger">
+            {{model.error}}
+        </div>
+        <h1>Login</h1>
+        <form name="loginForm" novalidate>
+            <input ng-model="username"
+                   name="username"
+                   class="form-control"
+                   placeholder="username"
+                   type="text"
+                   required/>
+            <input ng-model="password"
+                   name="password"
+                   class="form-control"
+                   placeholder="password"
+                   type="password"
+                   required/>
+            <button type="submit"
+                    ng-click="model.login(username, password)"
+                    class="btn btn-primary btn-block form-control">Login</button>
+        </form>
+        <a class="btn btn-primary btn-block"
+           href="#/register">Register</a>
+    </div>
+</div>
