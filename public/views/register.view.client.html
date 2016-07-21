@@ -1,5 +1,4 @@
 <div>
-  <div class="container">
       <h1>Register</h1>
       <div ng-show="model.error" class="alert alert-danger">
           {{model.error}}
@@ -32,14 +31,10 @@
           <span ng-show="registerForm.$submitted && registerForm.confirm.$invalid">
               Required Field
           </span>
-          <span ng-show="registerForm.$submitted && registerForm.password != registerForm.confirm">
-              Passwords must match
-          </span>
           <button type="submit"
                   class="btn btn-primary btn-block form-control"
                   ng-click="model.register(username, password, confirm)">Register</button>
       </form>
       <a class="btn btn-danger btn-block"
          href="#/login">Cancel</a>
-  </div>
 </div>

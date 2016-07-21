@@ -44,11 +44,13 @@
         }
 
         function init() {
-            /*UserService
+            UserService
                 .findUserById(id)
                 .then(function (response) {
                     vm.user = response.data;
-                });*/
+                });
+
+            vm.user = JSON.parse($window.localStorage.getItem("currentUser"));
         }
 
         

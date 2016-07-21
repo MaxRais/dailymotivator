@@ -1,0 +1,83 @@
+input {
+    margin-bottom: 5px;
+}
+
+.btn {
+    margin-bottom: 5px;
+    border-radius: 20px;
+}
+
+body {
+    padding-top: 60px;
+    padding-bottom:60px;
+}
+
+p.navbar-text.pull-right {
+    margin-right: 15px;
+}
+
+p.navbar-text.pull-left {
+    margin-left: 15px;
+}
+
+.navbar-header {
+    width: 100%;
+}
+
+.navbar-fixed-bottom {
+    width: 100%;
+}
+
+.mr-widget-tool {
+    position: absolute;
+    right: 15px;
+    background-color: white;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    border-bottom-left-radius: 8px;
+    z-index: 1;
+    opacity: 0.7;
+}
+
+.mr-widget.mr-youtube {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    /*padding-top: 25px; */
+    height: 0;
+}
+
+.youtube-widget {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+
+.youtube-widget iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.mr-widget.mr-youtube iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.btn.btn-flickr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+form.ng-submitted input.ng-invalid {
+    background-color: rgba(255, 68, 75, 0.56);
+}
+
+button {
+    border: none;
+    background: none;
+}

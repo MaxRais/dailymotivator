@@ -8,8 +8,6 @@ module.exports = function() {
     var UserSchema  = mongoose.Schema({
         username: String,
         password: String,
-        firstName: String,
-        lastName: String,
         quotes: [String],
         reminders: [{
             hour: Number,

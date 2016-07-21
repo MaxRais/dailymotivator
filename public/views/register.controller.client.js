@@ -13,7 +13,7 @@
         vm.register = register;
 
         function init() {
-            //vm.user = JSON.parse($window.localStorage.getItem("currentUser"));
+            vm.user = JSON.parse($window.localStorage.getItem("currentUser"));
         }
         init();
 
@@ -40,8 +40,7 @@
                             var newUser = res.data;
                             $window.localStorage.setItem("currentUser", angular.toJson(newUser));
                             $rootScope.currentUser = newUser;
-                            //$location.url("/user/"+newUser._id);
-                            $location.url("/login");
+                            $location.url("/user/"+newUser._id);
                         }
                     )
             }

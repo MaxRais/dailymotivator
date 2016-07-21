@@ -14,8 +14,8 @@
 
         function init() {
             vm.user = JSON.parse($window.localStorage.getItem("currentUser"));
-            //if(vm.user)
-              //  $location.url("/user/" + vm.user._id)
+            if(vm.user)
+                $location.url("/user/" + vm.user._id)
         }
         init();
 
